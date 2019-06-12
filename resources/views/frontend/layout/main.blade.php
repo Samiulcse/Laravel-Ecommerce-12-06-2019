@@ -6,7 +6,7 @@
     <meta http-equiv="x-ua-compatible" content="ie=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>
-        Foundation for Sites
+        @yield('title','Welcome')
     </title>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" />
     <link rel="stylesheet" href="{{ asset('public/frontend/dist')}}/css/foundation.css" />
@@ -20,7 +20,7 @@
     <div class="top-bar">
         <div style="color:white" class="top-bar-left">
             <h4 class="brand-title">
-                <a href="index.html">
+                <a href="{{ route('home') }}">
                     <i class="fa fa-home fa-lg" aria-hidden="true">
                     </i>
                     MC-MyKey Shirts
@@ -30,7 +30,7 @@
         <div class="top-bar-right">
             <ol class="menu">
                 <li>
-                    <a href="shirts.html">
+                    <a href="{{ route('shirts') }}">
                         SHIRTS
                     </a>
                 </li>

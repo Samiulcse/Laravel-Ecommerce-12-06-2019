@@ -12,7 +12,7 @@
             </strong>
         </h2>
         <br>
-        <a href="shirts.html"><button class="button large">Check out My Shirts</button></a>
+        <a href="{{ route('shirts') }}"><button class="button large">Check out My Shirts</button></a>
     </section>
     <br />
     <div class="subheader text-center">
@@ -23,6 +23,7 @@
 
     <!-- Latest SHirts -->
     <div class="row">
+        @for ($i = 0; $i < 4; $i++)
         <div class="small-3 columns">
             <div class="item-wrapper">
                 <div class="img-wrapper">
@@ -33,7 +34,7 @@
                         <img src="http://i.imgur.com/Mcw06Yt.png" />
                     </a>
                 </div>
-                <a href="#">
+                <a href="{{ route('shirt') }}">
                     <h3>
                         Kickin with Kraken Tee
                     </h3>
@@ -46,75 +47,8 @@
                 </p>
             </div>
         </div>
-        <div class="small-3 columns">
-            <div class="item-wrapper">
-                <div class="img-wrapper">
-                    <a class="button expanded add-to-cart">
-                        Add to Cart
-                    </a>
-                    <a href="#">
-                        <img src="http://i.imgur.com/Mcw06Yt.png" />
-                    </a>
-                </div>
-                <a href="#">
-                    <h3>
-                        Kickin with Kraken Tee
-                    </h3>
-                </a>
-                <h5>
-                    $19.99
-                </h5>
-                <p>
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin posuere sem enim, accumsan convallis risus semper.
-                </p>
-            </div>
-        </div>
-        <div class="small-3 columns">
-            <div class="item-wrapper">
-                <div class="img-wrapper">
-                    <a class="button expanded add-to-cart">
-                        Add to Cart
-                    </a>
-                    <a href="#">
-                        <img src="http://i.imgur.com/Mcw06Yt.png" />
-                    </a>
-                </div>
-                <a href="#">
-                    <h3>
-                        Kickin with Kraken Tee
-                    </h3>
-                </a>
-                <h5>
-                    $19.99
-                </h5>
-                <p>
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin posuere sem enim, accumsan convallis risus semper.
-                </p>
-            </div>
-        </div>
-        <div class="small-3 columns">
-            <div class="item-wrapper">
-                <div class="img-wrapper">
-                    <a class="button expanded add-to-cart">
-                        Add to Cart
-                    </a>
-                    <a href="#">
-                        <img src="http://i.imgur.com/Mcw06Yt.png" />
-                    </a>
-                </div>
-                <a href="#">
-                    <h3>
-                        Kickin with Kraken Tee
-                    </h3>
-                </a>
-                <h5>
-                    $19.99
-                </h5>
-                <p>
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin posuere sem enim, accumsan convallis risus semper.
-                </p>
-            </div>
-        </div>
+        @endfor
+
     </div>
     <!-- Footer -->
     <br>
