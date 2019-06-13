@@ -9,7 +9,7 @@ Our all t-shirt collection
 <!-- Latest SHirts -->
 <div class="row">
 
-    @for ($i = 0; $i < 12; $i++)
+    @forelse ($products as $product)
     <div class="small-3 columns">
         <div class="item-wrapper">
             <div class="img-wrapper">
@@ -17,23 +17,28 @@ Our all t-shirt collection
                     Add to Cart
                 </a>
                 <a href="#">
-                    <img src="http://i.imgur.com/Mcw06Yt.png" />
+                    <img src="{{ url('public/images',$product->image) }}" />
                 </a>
             </div>
-            <a href="{{ route('shirt') }}">
+            <a href="{{ route('shirt',$product->id) }}">
                 <h3>
-                    Kickin with Kraken Tee
+                    {{ $product->name }}
                 </h3>
             </a>
             <h5>
-                $19.99
+                ${{ $product->price }}
             </h5>
             <p>
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin posuere sem enim, accumsan convallis risus semper.
+            {{ $product->description }}
             </p>
         </div>
     </div>
-    @endfor
+
+    @empty
+
+    <h3>No Product yet</h3>
+
+    @endforelse
 
 </div>
 

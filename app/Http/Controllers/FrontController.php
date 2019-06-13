@@ -3,21 +3,25 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Product;
 
 class FrontController extends Controller
 {
     public function index()
     {
-        return view('frontend.home');
+        $products = Product::all();
+        return view('frontend.home',compact('products'));
     }
     
     public function shirts()
     {
-        return view('frontend.shirts');
+        $products = Product::all();
+        return view('frontend.shirts',compact('products'));
     }
 
-    public function shirt()
+    public function shirt($id)
     {
-        return view('frontend.shirt');
+        $product = Product::findOrFail($id);
+        return view('frontend.shirt',compact('product'));
     }
 }
